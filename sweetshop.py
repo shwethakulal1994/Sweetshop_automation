@@ -40,10 +40,7 @@ def add_to_cart_click(context,index, sweet_type, item_count):
     context.price_on_qty = (float(context.price))*(int(item_count)) # to get each item price
 
     context.total_price_of_added_qty += context.price_on_qty  # to get overall price of basket
-    return context.count, context.total_price_of_added_qty
-
-
-
+    # return context.count, context.total_price_of_added_qty
 
 
 def add_to_cart(context):
@@ -73,7 +70,7 @@ def add_to_cart(context):
             quantity = 4
 
         # Calling add_to_cart_click function
-        context.count,context.total_price_of_added_qty = add_to_cart_click(context,i,item_text, quantity)
+        add_to_cart_click(context,i,item_text, quantity)
         i += 1
 
 def random_num_generator(from_size, to_size):
